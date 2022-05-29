@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class ScreenToWorldPicker : MonoBehaviour
 {
+    BuildingManager buildingManager;
     Clickable selectedObject;
     Clickable m_hoveredObject;
     Clickable HoveredObject 
@@ -26,6 +27,11 @@ public class ScreenToWorldPicker : MonoBehaviour
     Ray ray;
     RaycastHit hit;
 
+    private void Start()
+    {
+        buildingManager = FindObjectOfType<BuildingManager>();
+    }
+
     private void FixedUpdate()
     {
         mousePos = Mouse.current.position.ReadValue();
@@ -33,7 +39,7 @@ public class ScreenToWorldPicker : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.GetComponent<Clickable>())
+            if (hit.collider.GetComponent<Clickable>() && !buildingManager.buildingToBuy)
             {
                 Clickable obj = hit.collider.GetComponent<Clickable>();
 
@@ -66,7 +72,6 @@ public class ScreenToWorldPicker : MonoBehaviour
             {
                 if (HoveredObject != null)
                 {
-                    HoveredObject.ResetMaterials();
                     HoveredObject = null;
                 }
             }
@@ -76,7 +81,6 @@ public class ScreenToWorldPicker : MonoBehaviour
         {
             if(HoveredObject != null)
             {
-                HoveredObject.ResetMaterials();
                 HoveredObject = null;
             }
             
@@ -94,7 +98,6 @@ public class ScreenToWorldPicker : MonoBehaviour
             {
                 if (selectedObject == this)
                 {
-                    selectedObject.ResetMaterials();
                     selectedObject = null;
                 }
                 else

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df2ef050e01a9e45ad0a95fb5f1aa16, type: 3}
+  m_Name: TownHall
+  m_EditorClassIdentifier: 
+  name: Town Hall
+  description: The Town Centre
+  cost: 2
+  model: {fileID: 4498698482809196035, guid: 11dc6d134f22c8c449d7ff2dc18c3410, type: 3}

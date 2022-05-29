@@ -13,7 +13,15 @@ public enum TileType
 
 public class Tile : Clickable
 {
+    public ResourceManagement.ResourceManager resourceManager;
+    BuildingManager buildingManager;
     TileType m_tileType;
+    public Building m_building;
+
+    private void Start()
+    {
+        buildingManager = FindObjectOfType<BuildingManager>();
+    }
 
     public override void OnHoverEnter()
     {
@@ -27,6 +35,19 @@ public class Tile : Clickable
 
     public override void OnSelect()
     {
-        base.OnSelect();
+        if (!m_building )
+        {
+            if (resourceManager && resourceManager.GoldAmount >= m_building.cost)
+            {
+                m_building = buildingManager.buildingToBuy;
+                resourceManager.AdjustGoldCount(m_building.cost);
+                Instantiate(m_building.model, m_snapPoint.position, Quaternion.identity);
+            }
+
+            else
+            {
+                Debug.Log("Insufficient Gold");
+            }
+        }
     }
 }

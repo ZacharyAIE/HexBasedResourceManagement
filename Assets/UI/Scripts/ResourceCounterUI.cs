@@ -10,13 +10,16 @@ namespace ResourceManagement
     {
         public List<TMP_Text> m_textBoxes = new List<TMP_Text>();
         public ResourceManager m_resourceManager;
+        
 
-        private void Start()
+        private void Awake()
         {
             foreach(TMP_Text t in GetComponentsInChildren<TMP_Text>())
             {
                 m_textBoxes.Add(t);
             }
+
+            m_resourceManager = FindObjectOfType<ResourceManager>();
         }
 
         [ContextMenu("Update")]
