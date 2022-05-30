@@ -574,6 +574,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "RotateItem",
+                    "type": "Button",
+                    "id": "61f23600-b3c9-48d5-aad5-11eae0e180cb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -820,39 +828,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "KeyZoom",
-                    "id": "0f91bd5b-436f-409e-8d24-ccbb3c23aba6",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Zoom",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "bca8d85c-f10a-46b6-9528-417401353582",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Zoom",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "f475a4d5-3fdf-425f-89de-11a1cdc48f7a",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Zoom",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "24076cac-9920-471d-b543-11e14fad6b2c",
                     "path": "<Mouse>/scroll",
@@ -860,6 +835,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8cdeb3a-104e-496d-aa7d-2662a3e506f2",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

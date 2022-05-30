@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 1188333922586575693}
   - component: {fileID: 4006295062072866695}
   - component: {fileID: 2330803572597440481}
-  - component: {fileID: 7166892771366715902}
   m_Layer: 0
   m_Name: grass
   m_TagString: Untagged
@@ -129,23 +128,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3906130615805142554, guid: 17fce6a2f8251f6479e06d415823169f, type: 3}
---- !u!114 &7166892771366715902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3213815664748697170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 441ee5feb3c9f1d4796f7e2b3ed224c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_renderer: {fileID: 4006295062072866695}
-  m_highlightColour: {r: 0, g: 0, b: 0, a: 0}
-  m_selectedColour: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
-  isHovered: 0
-  isSelected: 0
-  m_snapPoint: {fileID: 831973832696139520}
-  m_defaultColours: []
-  m_building: {fileID: 0}

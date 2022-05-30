@@ -3,40 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class Clickable : MonoBehaviour
+namespace ResourceManagement
 {
-    public MeshRenderer m_renderer;
-    public Color m_highlightColour;
-    public Color m_selectedColour;
-    public bool isHovered = false;
-    public bool isSelected = false;
-    public Transform m_snapPoint;
-
-    public List<Color> m_defaultColours;
-
-    public virtual void Start()
+    public abstract class Clickable : MonoBehaviour
     {
-        m_renderer = GetComponent<MeshRenderer>();
+        public bool isHovered = false;
+        public bool isSelected = false;
+        public Transform m_snapPoint;
 
-        foreach (Material mat in m_renderer.materials)
+        public virtual void OnHoverEnter()
         {
-            m_defaultColours.Add(mat.color);
+            isHovered = true;
         }
-    }
 
-    public virtual void OnHoverEnter()
-    {
-        isHovered = true;
-    }
+        public virtual void OnHoverExit()
+        {
+            Debug.Log("Exited: " + this);
+            isHovered = false;
+        }
 
-    public virtual void OnHoverExit()
-    {
-        Debug.Log("Exited: " + this);
-        isHovered = false;
-    }
-
-    public virtual void OnSelect()
-    {
-        isHovered = false;
+        public virtual void OnSelect()
+        {
+            isHovered = false;
+        }
     }
 }

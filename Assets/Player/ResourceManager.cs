@@ -16,76 +16,52 @@ namespace ResourceManagement
         
         void Awake()
         {
-            resourceList.Add(WoodAmount);
-            resourceList.Add(StoneAmount);
-            resourceList.Add(GoldAmount);
-            resourceList.Add(PeopleAmount);
-        }
-
-        public int WoodAmount { 
-            get
-            {
-                return m_woodCount;
-            }
-            set
-            {
-                m_woodCount = value;
-                resourceCounter.UpdateUI();
-            }
-        }
-        public int StoneAmount { 
-            get
-            {
-                return m_stoneCount;
-            }
-            set
-            {
-                m_stoneCount = value;
-                resourceCounter.UpdateUI();
-            } 
-        }
-        public int GoldAmount { 
-            get
-            {
-                return m_goldCount;
-            }
-            set
-            {
-                m_goldCount = value;
-                resourceCounter.UpdateUI();
-            }
-        }
-        public int PeopleAmount { 
-            get
-            {
-                return m_peopleCount;
-            }
-            set
-            {
-                m_peopleCount = value;
-                resourceCounter.UpdateUI();
-            }
+            resourceList.Add(m_woodCount); // 0
+            resourceList.Add(m_stoneCount); // 1
+            resourceList.Add(m_goldCount); // 2
+            resourceList.Add(m_peopleCount); // 3
         }
 
         public void AdjustWoodCount(int amount)
         {
-            WoodAmount += amount;
+            m_woodCount += amount;
+            resourceList[0] = GetWoodCount();
             woodChanged.Invoke();
         }
         public void AdjustPeopleCount(int amount)
         {
-            PeopleAmount += amount;
+            m_peopleCount += amount;
+            resourceList[1] = GetPeopleCount();
             peopleChanged.Invoke();
         }
         public void AdjustGoldCount(int amount)
         {
-            GoldAmount += amount;
+            m_goldCount += amount;
+            resourceList[2] = GetGoldCount();
             goldChanged.Invoke();
         }
         public void AdjustStoneCount(int amount)
         {
-            StoneAmount += amount;
+            m_stoneCount += amount;
+            resourceList[3] = GetStoneCount();
             stoneChanged.Invoke();
+        }
+
+        public int GetGoldCount()
+        {
+            return m_goldCount;
+        }
+        public int GetStoneCount()
+        {
+            return m_stoneCount;
+        }
+        public int GetWoodCount()
+        {
+            return m_woodCount;
+        }
+        public int GetPeopleCount()
+        {
+            return m_peopleCount;
         }
 
         private int m_woodCount = 200;

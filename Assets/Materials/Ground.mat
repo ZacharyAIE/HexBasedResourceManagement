@@ -8,14 +8,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ground
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: a4593f2372c3a59428d01a870e0afec0, type: 3}
   m_ShaderKeywords: _SPECULAR_SETUP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -29,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_a81744f1a6d649e7b7a4825a4d8dea91:
-        m_Texture: {fileID: 2800000, guid: 4871fdb720960894ab418a7d1c8c1701, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -102,6 +101,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_53b19c24095a47c29210d9bb8a413d69: 0
+    - Vector1_a9bb49b354c0445bb2d7c752dc6934b1: 0
     - Vector1_b406368bc7f046b4bca5bced0b54631e: 0
     - Vector1_e498f479b159406fb790602d4749b929: 0.2
     - _AlphaClip: 0
@@ -131,12 +131,12 @@ Material:
     - _WorkflowMode: 0
     - _ZWrite: 1
     m_Colors:
-    - Color_1b69d100ba31460c9f4cb39a7fea8a58: {r: 0, g: 0, b: 0, a: 0}
-    - Color_2ef7a237bbfb403aa8317c8ba5da16fe: {r: 0.4764151, g: 0.8566039, b: 1, a: 0}
+    - Color_1b69d100ba31460c9f4cb39a7fea8a58: {r: 1, g: 1, b: 1, a: 1}
+    - Color_2ef7a237bbfb403aa8317c8ba5da16fe: {r: 0.121484466, g: 0.5376934, b: 0.735849, a: 1}
     - Vector2_6294840a1b264dad9f0ae94e37694e59: {r: 0, g: 0, b: 0, a: 0}
-    - Vector2_a8d9f6c43b0041de94c7fd89f03ec27f: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_a8d9f6c43b0041de94c7fd89f03ec27f: {r: 1, g: 1, b: 1, a: 0}
     - Vector2_d528f18c6c66417890f7882e1244a174: {r: 50, g: 50, b: 0, a: 0}
-    - Vector2_e8218587012d4fe68093fa5666fa5ef6: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_e8218587012d4fe68093fa5666fa5ef6: {r: 50, g: 50, b: 0, a: 0}
     - Vector4_04a8c8de6c664ada9dd072ba5f944c87: {r: 0, g: 0, b: 0, a: 0}
     - Vector4_d146e24af9f34ee4875138e1dc6d4349: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 0.23113209, g: 0.53256804, b: 1, a: 1}

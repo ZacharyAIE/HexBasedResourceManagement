@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.Events;
 
 namespace ResourceManagement
 {
@@ -10,6 +11,7 @@ namespace ResourceManagement
     {
         public List<TMP_Text> m_textBoxes = new List<TMP_Text>();
         public ResourceManager m_resourceManager;
+        public UnityEvent updateEvent;
         
 
         private void Awake()
@@ -20,6 +22,8 @@ namespace ResourceManagement
             }
 
             m_resourceManager = FindObjectOfType<ResourceManager>();
+
+            updateEvent.AddListener(()=> UpdateUI());
         }
 
         [ContextMenu("Update")]
@@ -29,7 +33,10 @@ namespace ResourceManagement
             {
                 if (m_textBoxes[i].text != m_resourceManager.resourceList[i].ToString())
                 {
-                    m_textBoxes[i].transform.parent.transform.DOShakePosition(.5f, 20);
+                    DOTween.CompleteAll();
+                    Vector3 temp = m_textBoxes[i].transform.parent.position;
+                    m_textBoxes[i].transform.parent.position = temp;
+                    m_textBoxes[i].transform.parent.transform.DOShakePosition(.5f, 10);
                     m_textBoxes[i].text = m_resourceManager.resourceList[i].ToString();
                 }
             }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TownHall
   m_EditorClassIdentifier: 
   name: Town Hall
+  buttonSprite: {fileID: 21300000, guid: fa76993a7b631b14cbaeb6403a868062, type: 3}
   description: The Town Centre
   cost: 2
   model: {fileID: 4498698482809196035, guid: 11dc6d134f22c8c449d7ff2dc18c3410, type: 3}

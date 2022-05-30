@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using ResourceManagement;
 
 public class ScreenToWorldPicker : MonoBehaviour
 {
-    BuildingManager buildingManager;
+    BuildCursor buildingManager;
     Clickable selectedObject;
     Clickable m_hoveredObject;
     Clickable HoveredObject 
@@ -29,7 +30,7 @@ public class ScreenToWorldPicker : MonoBehaviour
 
     private void Start()
     {
-        buildingManager = FindObjectOfType<BuildingManager>();
+        buildingManager = FindObjectOfType<BuildCursor>();
     }
 
     private void FixedUpdate()
@@ -92,20 +93,23 @@ public class ScreenToWorldPicker : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        if (Physics.Raycast(ray, out hit))
+        if (ctx.canceled)
         {
-            if (hit.collider.GetComponent<Clickable>())
+
+            if (Physics.Raycast(ray, out hit))
             {
-                if (selectedObject == this)
+                if (hit.collider.GetComponentInParent<Clickable>())
                 {
-                    selectedObject = null;
+                    if (selectedObject == this)
+                    {
+                        selectedObject = null;
+                    }
+                    else
+                    {
+                        selectedObject = hit.collider.GetComponentInParent<Clickable>();
+                        selectedObject.OnSelect();
+                    }
                 }
-                else
-                {
-                    selectedObject = hit.collider.GetComponent<Clickable>();
-                    selectedObject.OnSelect();
-                }
-                    
             }
         }
     }

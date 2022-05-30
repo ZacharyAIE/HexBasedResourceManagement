@@ -6,6 +6,7 @@ using UnityEngine;
 public class Building : ScriptableObject
 {
     public string name;
+    public Sprite buttonSprite;
     public string description;
     public int cost;
     public GameObject model;
