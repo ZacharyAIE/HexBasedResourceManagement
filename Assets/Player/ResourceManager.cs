@@ -7,10 +7,10 @@ namespace ResourceManagement
 {
     public class ResourceManager : MonoBehaviour
     {
-        [SerializeField] public static int startingWood = 200;
-        [SerializeField] public static int startingStone = 200;
-        [SerializeField] public static int startingGold = 100;
-        [SerializeField] public static int startingPeople = 2;
+        [SerializeField] public int startingWood = 200;
+        [SerializeField] public int startingStone = 200;
+        [SerializeField] public int startingGold = 100;
+        [SerializeField] public int startingPeople = 2;
 
         [HideInInspector] public List<int> resourceList = new List<int>();
         public ResourceCounterUI resourceCounter;
@@ -25,6 +25,12 @@ namespace ResourceManagement
             resourceList.Add(m_stoneCount); // 1
             resourceList.Add(m_goldCount); // 2
             resourceList.Add(m_peopleCount); // 3
+
+            m_woodCount = startingWood;
+            m_stoneCount = startingStone;
+            m_goldCount = startingGold;
+            m_peopleCount = startingPeople;
+
         }
 
         public void AdjustWoodCount(int amount)
@@ -69,9 +75,9 @@ namespace ResourceManagement
             return m_peopleCount;
         }
 
-        private int m_woodCount = startingWood;
-        private int m_stoneCount = startingStone;
-        private int m_goldCount = startingGold;
-        private int m_peopleCount = startingPeople;
+        private int m_woodCount;
+        private int m_stoneCount;
+        private int m_goldCount;
+        private int m_peopleCount;
     }
 }
