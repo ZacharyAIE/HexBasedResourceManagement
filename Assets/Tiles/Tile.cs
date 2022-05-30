@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 namespace ResourceManagement
 {
@@ -12,13 +13,14 @@ namespace ResourceManagement
         BuildCursor buildingManager;
         public TileType m_tileType;
         public Building m_building;
-        
-
+        AudioSource m_audioSource;
+        public AudioClip buildingPlaceSound;
 
         private void Start()
         {
             buildingManager = FindObjectOfType<BuildCursor>();
             resourceManager = FindObjectOfType<ResourceManager>();
+            m_audioSource = GetComponent<AudioSource>();
             Instantiate(m_tileType.model, transform, false);
         }
 
@@ -36,17 +38,21 @@ namespace ResourceManagement
         {
             if (!m_building && buildingManager.buildingToBuy)
             {
+                // BUILDING SUCCESFULLY PLACED!
                 if (resourceManager && resourceManager.GetGoldCount() >= buildingManager.buildingToBuy.cost)
                 {
                     m_building = buildingManager.buildingToBuy;
                     resourceManager.AdjustGoldCount(-m_building.cost);
                     Instantiate(m_building.model, m_snapPoint.position, Quaternion.Euler(0,buildingManager.rotationAngle,0));
 
+                    m_audioSource.PlayOneShot(buildingPlaceSound);
+
+                    buildingManager.ClearCursor(true);
                 }
 
                 else
                 {
-                    Debug.Log("Insufficient Gold");
+                    resourceManager.resourceCounter.BuildFailed();
                 }
             }
         }
@@ -70,5 +76,7 @@ namespace ResourceManagement
             }
             return hexMesh;
         }
+
+        
     }
 }

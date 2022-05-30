@@ -26,7 +26,8 @@ namespace ResourceManagement
                 {
                     var button = Instantiate(buttonPrefab, this.gameObject.transform);
                     button.GetComponentsInChildren<Image>()[1].sprite = b.buttonSprite;
-                    button.GetComponentInChildren<Button>().onClick.AddListener(()=> buildCursor.buildingToBuy = b);
+                    // Clear the cursor then put in the correct building to buy
+                    button.GetComponentInChildren<Button>().onClick.AddListener(() => { buildCursor.ClearCursor(true); buildCursor.buildingToBuy = b; });
                 }
             }
         }

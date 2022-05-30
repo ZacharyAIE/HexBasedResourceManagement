@@ -12,7 +12,7 @@ namespace ResourceManagement
         public List<TMP_Text> m_textBoxes = new List<TMP_Text>();
         public ResourceManager m_resourceManager;
         public UnityEvent updateEvent;
-        
+        public TMP_Text messageBox;
 
         private void Awake()
         {
@@ -39,6 +39,30 @@ namespace ResourceManagement
                     m_textBoxes[i].transform.parent.transform.DOShakePosition(.5f, 10);
                     m_textBoxes[i].text = m_resourceManager.resourceList[i].ToString();
                 }
+            }
+        }
+        ///FIX THIS STUFF!!!!!!!!!!!!!!
+        ///!!!!!!!!!!!!!!!!!!!!!!!
+        ///!!!!!!!!!!!!!
+        public void BuildFailed()
+        {
+            EnableFailText();
+            if (messageBox.enabled != false)
+                Invoke("DisableFailText", 2f);
+        }
+
+        void EnableFailText()
+        {
+            if (messageBox)
+            {
+                messageBox.enabled = true;
+            }
+        }
+        void DisableFailText()
+        {
+            if (messageBox)
+            {
+                messageBox.enabled = false;
             }
         }
     }

@@ -170,7 +170,7 @@ namespace Assets.Camera.Scripts {
         {
             transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * smoothRate);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * smoothRate);
-            cam.transform.localPosition = Vector3.Lerp(cam.transform.localPosition, targetZoom, Time.deltaTime * smoothRate);
+            cam.transform.localPosition = Vector3.Lerp(cam.transform.localPosition, new Vector3(targetZoom.x, Mathf.Clamp(targetZoom.y, 1, 70), targetZoom.z), Time.deltaTime * smoothRate);
         }
     }
 }
