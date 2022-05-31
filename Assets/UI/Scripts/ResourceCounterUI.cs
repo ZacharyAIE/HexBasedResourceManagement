@@ -9,36 +9,34 @@ namespace ResourceManagement
 {
     public class ResourceCounterUI : MonoBehaviour
     {
-        public List<TMP_Text> m_textBoxes = new List<TMP_Text>();
+        public List<ResourceUI> resourceUIElements = new List<ResourceUI>();
         public ResourceManager m_resourceManager;
-        public UnityEvent updateEvent;
         public TMP_Text messageBox;
+        public ResourceUI uiBoxPrefab;
 
-        private void Awake()
+        private void Start()
         {
-            foreach(TMP_Text t in GetComponentsInChildren<TMP_Text>())
-            {
-                m_textBoxes.Add(t);
-            }
-
-            m_resourceManager = FindObjectOfType<ResourceManager>();
-
-            updateEvent.AddListener(()=> UpdateUI());
+            CreateResourceUI();
         }
 
         [ContextMenu("Update")]
         public void UpdateUI()
         {
-            for(int i = 0; i < m_textBoxes.Count; i++)
+            foreach (ResourceUI ui in resourceUIElements)
             {
-                if (m_textBoxes[i].text != m_resourceManager.resourceList[i].ToString())
-                {
-                    DOTween.CompleteAll();
-                    Vector3 temp = m_textBoxes[i].transform.parent.position;
-                    m_textBoxes[i].transform.parent.position = temp;
-                    m_textBoxes[i].transform.parent.transform.DOShakePosition(.5f, 10);
-                    m_textBoxes[i].text = m_resourceManager.resourceList[i].ToString();
-                }
+                ui.UpdateUI();
+               
+            }
+        }
+
+        public void CreateResourceUI()
+        {
+            foreach (ResourceManager.ResourceType rt in System.Enum.GetValues(typeof(ResourceManager.ResourceType)))
+            {
+                ResourceUI ui = Instantiate(uiBoxPrefab, this.transform);
+                ui.gameObject.name = rt.ToString() + " Resource UI";
+                resourceUIElements.Add(ui);
+                ui.InitUI(rt);
             }
         }
         ///FIX THIS STUFF!!!!!!!!!!!!!!

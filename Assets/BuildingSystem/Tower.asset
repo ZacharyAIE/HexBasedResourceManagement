@@ -15,5 +15,7 @@ MonoBehaviour:
   name: Tower
   buttonSprite: {fileID: 21300000, guid: ffd7061afcb1b214aabf9bc9d815eb22, type: 3}
   description: A Watch Tower.
-  cost: 20
+  woodCost: 20
+  goldCost: 50
+  stoneCost: 10
   model: {fileID: 919132149155446097, guid: e620dc47af26ff4489bf806908e90e67, type: 3}

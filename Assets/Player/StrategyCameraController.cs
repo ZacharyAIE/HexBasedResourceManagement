@@ -7,10 +7,11 @@ using UnityEngine.InputSystem;
 // With help from https://gamedev-resources.com/make-a-configurable-camera-with-the-new-unity-input-system/#Adding_rotation_behavior
 // and https://www.youtube.com/watch?v=rnqF6S7PfFA
 
-namespace Assets.Camera.Scripts {
+namespace Assets.Camera.Scripts
+{
 
     public class StrategyCameraController : MonoBehaviour
-    {   
+    {
         public UnityEngine.Camera cam;
 
         [Header("Speed Settings")]
@@ -82,14 +83,16 @@ namespace Assets.Camera.Scripts {
         ////// UPDATE VALUES IN HERE //////
         private void HandleScrollZoomInput(InputAction.CallbackContext ctx)
         {
-            if (ctx.performed )
+            if (ctx.performed)
             {
-                if(ctx.ReadValue<Vector2>().y > 0)
+                if (ctx.ReadValue<Vector2>().y > 0 && targetZoom.y > 2)
                     targetZoom += zoomSpeed;
-                if (ctx.ReadValue<Vector2>().y < 0)
+                if (ctx.ReadValue<Vector2>().y < 0 && targetZoom.y < 70)
                     targetZoom -= zoomSpeed;
 
-                Vector3.ClampMagnitude(targetZoom, 76);
+                //Vector3.ClampMagnitude(targetZoom, 76);
+                Mathf.Clamp(targetZoom.y, 1, 76);
+
             }
         }
         private void HandleCamMove(InputAction.CallbackContext ctx)
@@ -161,7 +164,7 @@ namespace Assets.Camera.Scripts {
             if (rotateIsHeld)
                 targetRotation *= Quaternion.Euler(Vector3.up * keyboardRotationSpeed);
 
-            if(mouseRotateHeld)
+            if (mouseRotateHeld)
                 targetRotation *= Quaternion.AngleAxis(-mouseDelta.x * Time.deltaTime * mouseRotationSpeed, Vector3.up);
         }
 
@@ -171,6 +174,7 @@ namespace Assets.Camera.Scripts {
             transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * smoothRate);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * smoothRate);
             cam.transform.localPosition = Vector3.Lerp(cam.transform.localPosition, new Vector3(targetZoom.x, Mathf.Clamp(targetZoom.y, 1, 70), targetZoom.z), Time.deltaTime * smoothRate);
+
         }
     }
 }

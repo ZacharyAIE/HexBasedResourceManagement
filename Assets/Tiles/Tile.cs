@@ -10,7 +10,7 @@ namespace ResourceManagement
     public class Tile : Clickable
     {
         public ResourceManagement.ResourceManager resourceManager;
-        BuildCursor buildingManager;
+        BuildCursor buildCursor;
         public TileType m_tileType;
         public Building m_building;
         AudioSource m_audioSource;
@@ -18,7 +18,7 @@ namespace ResourceManagement
 
         private void Start()
         {
-            buildingManager = FindObjectOfType<BuildCursor>();
+            buildCursor = FindObjectOfType<BuildCursor>();
             resourceManager = FindObjectOfType<ResourceManager>();
             m_audioSource = GetComponent<AudioSource>();
             Instantiate(m_tileType.model, transform, false);
@@ -36,18 +36,20 @@ namespace ResourceManagement
 
         public override void OnSelect()
         {
-            if (!m_building && buildingManager.buildingToBuy)
+            if (!m_building && buildCursor.buildingToBuy)
             {
                 // BUILDING SUCCESFULLY PLACED!
-                if (resourceManager && resourceManager.GetGoldCount() >= buildingManager.buildingToBuy.cost)
+                if (resourceManager && resourceManager.GetResource(ResourceManager.ResourceType.Gold) >= buildCursor.buildingToBuy.goldCost)
                 {
-                    m_building = buildingManager.buildingToBuy;
-                    resourceManager.AdjustGoldCount(-m_building.cost);
-                    Instantiate(m_building.model, m_snapPoint.position, Quaternion.Euler(0,buildingManager.rotationAngle,0));
+                    m_building = buildCursor.buildingToBuy;
+
+                    buildCursor.TakeResources();
+
+                    Instantiate(m_building.model, m_snapPoint.position, Quaternion.Euler(0,buildCursor.rotationAngle,0));
 
                     m_audioSource.PlayOneShot(buildingPlaceSound);
 
-                    buildingManager.ClearCursor(true);
+                    buildCursor.ClearCursor(true);
                 }
 
                 else
@@ -68,15 +70,9 @@ namespace ResourceManagement
         {
             if (!hexMesh)
             {
-
-                //GameObject go = Resources.Load("Hex") as Mesh;
-                //hexMesh = go.GetComponent<MeshRenderer>();
-
                 hexMesh = Resources.Load<Mesh>("Hex");
             }
             return hexMesh;
         }
-
-        
     }
 }
