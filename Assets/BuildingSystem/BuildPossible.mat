@@ -141,13 +141,13 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_0de2f468936943428075b99b6cb7a154: {r: 0, g: 0.9910371, b: 1, a: 0}
-    - Color_856d146604634e42a5ea1f1fe6bd34c1: {r: 0.39670223, g: 0.745283, b: 0.355064, a: 0}
+    - Color_856d146604634e42a5ea1f1fe6bd34c1: {r: 0, g: 0.5019608, b: 0.039215688, a: 1}
     - Vector2_d9539ac0fef041aca22b3775f4999e3b: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NormalMapTiling: {r: 1, g: 1, b: 0, a: 0}
-    - _RimColour: {r: 0, g: 1, b: 0.08247151, a: 1}
+    - _RimColour: {r: 0, g: 0.5, b: 0.04117644, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

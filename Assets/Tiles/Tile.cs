@@ -15,12 +15,14 @@ namespace ResourceManagement
         public Building m_building;
         AudioSource m_audioSource;
         public AudioClip buildingPlaceSound;
+        public ParticleSystem m_particleSystem;
 
         private void Start()
         {
             buildCursor = FindObjectOfType<BuildCursor>();
             resourceManager = FindObjectOfType<ResourceManager>();
             m_audioSource = GetComponent<AudioSource>();
+            m_particleSystem = GetComponentInChildren<ParticleSystem>();
             Instantiate(m_tileType.model, transform, false);
         }
 
@@ -46,6 +48,8 @@ namespace ResourceManagement
                     buildCursor.TakeResources();
 
                     Instantiate(m_building.model, m_snapPoint.position, Quaternion.Euler(0,buildCursor.rotationAngle,0));
+
+                    m_particleSystem.Play();
 
                     m_audioSource.PlayOneShot(buildingPlaceSound);
 
