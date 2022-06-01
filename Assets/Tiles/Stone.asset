@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Stone
   pathCost: 1
-  model: {fileID: 919132149155446097, guid: 82d92f02b2c33ca4e9c8bbc32441f647, type: 3}
+  model: {fileID: 3213815664748697170, guid: 2a5ad3628e4b4f7429956636ac864f9a, type: 3}
+  defaultBuilding: {fileID: 11400000, guid: 8e761c76947d7be479ef5dcc89574008, type: 2}

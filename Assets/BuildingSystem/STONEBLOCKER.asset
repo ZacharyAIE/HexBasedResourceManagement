@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59958b3608ab2a84b98f2d94756f3525, type: 3}
-  m_Name: Empty
+  m_Script: {fileID: 11500000, guid: 9df2ef050e01a9e45ad0a95fb5f1aa16, type: 3}
+  m_Name: STONEBLOCKER
   m_EditorClassIdentifier: 
   name: 
-  pathCost: 0
-  model: {fileID: 0}
+  buttonSprite: {fileID: 0}
+  description: 
+  woodCost: 0
+  goldCost: 0
+  stoneCost: 0
+  model: {fileID: 919132149155446097, guid: 82d92f02b2c33ca4e9c8bbc32441f647, type: 3}

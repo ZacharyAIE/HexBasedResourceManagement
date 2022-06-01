@@ -10,5 +10,6 @@ namespace ResourceManagement
         public string name;
         public int pathCost;
         public GameObject model;
+        public Building defaultBuilding;
     }
 }

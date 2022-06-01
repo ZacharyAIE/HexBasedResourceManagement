@@ -52,7 +52,8 @@ namespace ResourceManagement
                         cursorAttachedModel.transform.position = hitObject.m_snapPoint.position;
                     }
 
-                    if (!hitObject.m_building && buildingToBuy.goldCost <= resourceManager.GetResource(ResourceManager.ResourceType.Gold))
+                    // Set the material based on if building is possible
+                    if (!hitObject.m_building && hitObject.CanAfford())
                     {
                         Material[] mats = cursorAttachedModel.GetComponent<MeshRenderer>().materials;
                         for (int i = 0; i < cursorAttachedModel.GetComponent<MeshRenderer>().materials.Length; i++)
