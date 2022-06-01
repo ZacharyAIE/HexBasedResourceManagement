@@ -12,6 +12,7 @@ namespace ResourceManagement
         public const int m_yAmount = 20;
         private float hexHeight = 1;
         private float hexWidth = 1;
+        public float animationLength = 0.5f;
 
         public TileList TileList;
         public GameObject m_tilePrefab;
@@ -74,7 +75,6 @@ namespace ResourceManagement
                     go.name = go.GetComponent<Tile>().m_tileType.name + x + "|" + y;
                     m_tiles.Add(go);
                     go.gameObject.SetActive(false);
-                    StartCoroutine(AnimateCo());
                 }
             }
         }
@@ -104,8 +104,7 @@ namespace ResourceManagement
                 if (tile != null)
                 {
                     tile.SetActive(true);
-                    tile.transform.DOMove(new Vector3(tile.transform.position.x, tile.transform.position.y - 5, tile.transform.position.z), 0.5f);
-                    tile.GetComponent<AudioSource>().PlayOneShot(tilePlacedSound);
+                    tile.transform.DOMove(new Vector3(tile.transform.position.x, tile.transform.position.y - 5, tile.transform.position.z), animationLength);
                     yield return new WaitForSeconds(0.004f);
                 }
             }
@@ -116,14 +115,18 @@ namespace ResourceManagement
             ClearGrid();
             GenerateGridNoVisuals();
             StartCoroutine(AnimateCo());
+            
         }
 
         public void ClearGrid()
         {
-            for (int i = 0; i < m_tiles.Count; i++)
+            if(m_tiles.Count > 0)
             {
-                Destroy(m_tiles[i]);
-                m_tiles[i] = null;
+                for (int i = 0; i < m_tiles.Count; i++)
+                {
+                    Destroy(m_tiles[i]);
+                    m_tiles[i] = null;
+                }
             }
         }
     }
