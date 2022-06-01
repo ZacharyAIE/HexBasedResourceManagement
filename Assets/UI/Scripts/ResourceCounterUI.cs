@@ -11,7 +11,7 @@ namespace ResourceManagement
     {
         public List<ResourceUI> resourceUIElements = new List<ResourceUI>();
         public ResourceManager m_resourceManager;
-        public TMP_Text messageBox;
+        public GameObject messageBox;
         public ResourceUI uiBoxPrefab;
 
         private void Start()
@@ -45,7 +45,7 @@ namespace ResourceManagement
         public void BuildFailed()
         {
             EnableFailText();
-            if (messageBox.enabled != false)
+            if (messageBox.active != false)
                 Invoke("DisableFailText", 2f);
         }
 
@@ -53,14 +53,14 @@ namespace ResourceManagement
         {
             if (messageBox)
             {
-                messageBox.enabled = true;
+                messageBox.active = true;
             }
         }
         void DisableFailText()
         {
             if (messageBox)
             {
-                messageBox.enabled = false;
+                messageBox.active = false;
             }
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace ResourceManagement
 {
+    
     [CreateAssetMenu(menuName = "Tile Type")]
     public class TileType : ScriptableObject
     {

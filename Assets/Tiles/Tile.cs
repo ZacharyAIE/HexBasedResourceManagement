@@ -7,7 +7,6 @@ using DG.Tweening;
 
 namespace ResourceManagement
 {
-
     public class Tile : Clickable
     {
         public ResourceManagement.ResourceManager resourceManager;
