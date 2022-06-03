@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ResourceManagement
+namespace ResourceManagement.BuildingSystem
 {
     public enum TileTypes
     {

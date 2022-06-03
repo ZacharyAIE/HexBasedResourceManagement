@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-namespace ResourceManagement
+namespace ResourceManagement.BuildingSystem
 {
 
     public class BuildCursor : MonoBehaviour
@@ -14,6 +14,7 @@ namespace ResourceManagement
         public GameObject cursorAttachedModel;
         public Material buildPossibleMaterial;
         public Material buildImpossibleMaterial;
+        public Material highlightMaterial;
 
         [HideInInspector] public float rotationAngle;
         public float rotationByAmount = 90;
@@ -53,7 +54,7 @@ namespace ResourceManagement
                     }
 
                     // Set the material based on if building is possible
-                    if (!hitObject.m_building && hitObject.CanAfford())
+                    if (!hitObject.GetBuildingData() && hitObject.CanAfford())
                     {
                         Material[] mats = cursorAttachedModel.GetComponent<MeshRenderer>().materials;
                         for (int i = 0; i < cursorAttachedModel.GetComponent<MeshRenderer>().materials.Length; i++)
@@ -78,6 +79,54 @@ namespace ResourceManagement
                 {
                     ClearCursor(false);
                 }
+            }
+
+            // When we dont have a building to buy selected
+            else if (!buildingToBuy)
+            {
+                //// Find whats under mouse
+                //mousePos = Mouse.current.position.ReadValue();
+                //ray = Camera.main.ScreenPointToRay(mousePos);
+
+                //Tile hitObject;
+                //Tile prevHitObject = null;
+                //Material[] mats;
+                //Material[] oldMatsTemp = null;
+
+                //// If its a tile
+                //if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.GetComponentInParent<Tile>())
+                //{
+                //    hitObject = hit.collider.gameObject.GetComponentInParent<Tile>();
+
+                //    if (hitObject)
+                //    {
+                //        // If the tile has a building on it
+                //        if (hitObject != null && hitObject.GetBuilding())
+                //        {
+                //            mats = hitObject.GetBuilding().GetComponent<MeshRenderer>().materials;
+                //            oldMatsTemp = mats;
+                //            // Change its material to select it.
+                //            for (int i = 0; i < hitObject.GetBuilding().GetComponent<MeshRenderer>().materials.Length; i++)
+                //            {
+                //                mats[i] = highlightMaterial;
+                //                hitObject.GetBuilding().GetComponent<MeshRenderer>().materials = mats;
+                //            }
+                //            prevHitObject = hitObject;
+                //        }
+                //        if (prevHitObject != null && prevHitObject != hitObject)
+                //        {
+                //            if (hitObject.GetBuilding())
+                //            {
+                //                for (int i = 0; i < hitObject.GetBuilding().GetComponent<MeshRenderer>().materials.Length; i++)
+                //                {
+                //                    mats = oldMatsTemp;
+                //                    prevHitObject.GetBuilding().GetComponent<MeshRenderer>().materials = mats;
+                //                }
+                //            }
+                //        }
+                //    }
+                    
+                //}
             }
         }
 

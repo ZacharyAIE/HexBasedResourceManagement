@@ -582,6 +582,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Delete",
+                    "type": "Button",
+                    "id": "ef997782-f856-448d-af9a-3c243d6f54ae",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -846,6 +854,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "RotateItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8851e37a-8c8a-46f1-95f0-fc00371d8fd4",
+                    "path": "<Keyboard>/delete",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Delete",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ResourceManagement
+namespace ResourceManagement.BuildingSystem
 {
     public abstract class Clickable : MonoBehaviour
     {

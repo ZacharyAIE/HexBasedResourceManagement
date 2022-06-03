@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
-using ResourceManagement;
+using ResourceManagement.BuildingSystem;
 
 public class ScreenToWorldPicker : MonoBehaviour
 {

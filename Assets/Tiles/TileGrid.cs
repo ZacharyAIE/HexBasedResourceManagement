@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-namespace ResourceManagement
+namespace ResourceManagement.BuildingSystem
 {
 
     public class TileGrid : MonoBehaviour
@@ -17,6 +17,12 @@ namespace ResourceManagement
         public TileList TileList;
         public GameObject m_tilePrefab;
         public AudioClip tilePlacedSound;
+        public int xEdgeErosion = 3;
+        public int yEdgeErosion = 3;
+        [Tooltip("0 - 1")][Range(0, 1)]public float erosionChance = 0.5f;
+
+        private float verticalHexOffset = 0.866f;
+        private float horizontalHexOffset = 0.5f;
 
         public List<GameObject> m_tiles = new List<GameObject>();
 
@@ -44,7 +50,18 @@ namespace ResourceManagement
                 {
                     var seed = Random.value;
 
+
+                    // Select Tile type
                     GameObject go = Instantiate(m_tilePrefab);
+                    //if((x == 0 && x < xEdgeErosion || x == m_xAmount - 1 && x > m_xAmount - xEdgeErosion) && seed < erosionChance)
+                    //{
+                    //    Destroy(go);
+                    //}
+                    //if ((y == 0 && x < yEdgeErosion || y == m_yAmount - 1 && x > m_yAmount - yEdgeErosion) && seed < erosionChance)
+                    //{
+                    //    Destroy(go);
+                    //}
+
                     if (x == 0 || x == m_xAmount - 1)
                     {
                         go.GetComponent<Tile>().m_tileType = TileList.tileDictionary[TileTypes.Sand];
@@ -69,12 +86,16 @@ namespace ResourceManagement
                         }
                     }
 
-                    Vector2 gridPos = new Vector2(x, y);
-                    go.transform.position = CalcPosition(gridPos);
-                    go.transform.parent = this.transform;
-                    go.name = go.GetComponent<Tile>().m_tileType.name + x + "|" + y;
-                    m_tiles.Add(go);
-                    go.gameObject.SetActive(false);
+                    if (go)
+                    {
+                        Vector2 gridPos = new Vector2(x, y);
+                        go.transform.position = CalcPosition(gridPos);
+                        go.transform.parent = this.transform;
+                        go.name = go.GetComponent<Tile>().m_tileType.name + x + "|" + y;
+                        m_tiles.Add(go);
+                        go.gameObject.SetActive(false);
+                    }
+                    
                 }
             }
         }
@@ -88,12 +109,12 @@ namespace ResourceManagement
             }
 
 
-            float x = transform.position.x + gridPos.x * hexWidth + 0.5f;
+            float x = transform.position.x + gridPos.x * hexWidth + horizontalHexOffset;
             if (gridPos.y % 2 != 0)
             {
                 x += .5f;
             }
-            float z = transform.position.z + gridPos.y * hexHeight * 0.866f;
+            float z = transform.position.z + gridPos.y * hexHeight * verticalHexOffset;
             return new Vector3(x, 5, z);
         }
 

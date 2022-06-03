@@ -5,14 +5,15 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using DG.Tweening;
 
-namespace ResourceManagement
+namespace ResourceManagement.BuildingSystem
 {
     public class Tile : Clickable
     {
         public ResourceManagement.ResourceManager resourceManager;
         BuildCursor buildCursor;
         public TileType m_tileType;
-        public Building m_building;
+        private Building m_buildingData;
+        private GameObject m_currentBuilding;
         AudioSource m_audioSource;
         public AudioClip buildingPlaceSound;
         public ParticleSystem m_particleSystem;
@@ -29,10 +30,10 @@ namespace ResourceManagement
 
             if (m_tileType.defaultBuilding)
             {
-                var b = Instantiate(m_tileType.defaultBuilding.model, m_snapPoint.position, Quaternion.identity);
-                b.transform.parent = m_snapPoint; // Separated this from the Instantiate to ignore the scale of the tile.
+                m_currentBuilding = Instantiate(m_tileType.defaultBuilding.model, m_snapPoint.position, Quaternion.identity);
+                m_currentBuilding.transform.parent = m_snapPoint; // Separated this from the Instantiate to ignore the scale of the tile.
                 
-                m_building = m_tileType.defaultBuilding;
+                m_buildingData = m_tileType.defaultBuilding;
             }
         }
 
@@ -48,18 +49,18 @@ namespace ResourceManagement
 
         public override void OnSelect()
         {
-            if (!m_building && buildCursor.buildingToBuy)
+            if (!m_buildingData && buildCursor.buildingToBuy)
             {
                 // BUILDING SUCCESFULLY PLACED!
                 if (resourceManager && CanAfford())
                 {
-                    m_building = buildCursor.buildingToBuy;
+                    m_buildingData = buildCursor.buildingToBuy;
 
                     buildCursor.TakeResources();
 
-                    var nb = Instantiate(m_building.model, m_underTile.position, Quaternion.Euler(0,buildCursor.rotationAngle,0));
+                    m_currentBuilding = Instantiate(m_buildingData.model, m_underTile.position, Quaternion.Euler(0,buildCursor.rotationAngle,0));
 
-                    nb.transform.DOMove(m_snapPoint.position, m_constructAnimLength); // Animate the construction of the building.
+                    m_currentBuilding.transform.DOMove(m_snapPoint.position, m_constructAnimLength); // Animate the construction of the building.
 
                     var tileColour = m_tileType.model.GetComponent<MeshRenderer>().sharedMaterials[1].color;
                     m_particleSystem.GetComponent<ParticleSystemRenderer>().material.color = new Color(tileColour.r /2, tileColour.g /2, tileColour.b /2, tileColour.a);
@@ -75,6 +76,10 @@ namespace ResourceManagement
                 {
                     resourceManager.resourceCounter.BuildFailed();
                 }
+            }
+            if (m_buildingData && !buildCursor.buildingToBuy)
+            {
+
             }
         }
 
@@ -104,6 +109,16 @@ namespace ResourceManagement
             }
             else
                 return false;
+        }
+
+        public Building GetBuildingData()
+        {
+            return m_buildingData;
+        }
+
+        public GameObject GetBuilding()
+        {
+            return m_currentBuilding;
         }
     }
 }

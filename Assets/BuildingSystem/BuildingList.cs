@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Building List")]
-public class BuildingList : ScriptableObject
+namespace ResourceManagement.BuildingSystem
 {
-    public List<Building> list;
+    [CreateAssetMenu(menuName = "Building List")]
+    public class BuildingList : ScriptableObject
+    {
+        public List<Building> list;
+    }
 }
+
+

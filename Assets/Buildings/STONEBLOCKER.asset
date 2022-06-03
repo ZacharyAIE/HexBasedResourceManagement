@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df2ef050e01a9e45ad0a95fb5f1aa16, type: 3}
-  m_Name: Golf Course
+  m_Name: STONEBLOCKER
   m_EditorClassIdentifier: 
-  name: Golf Course
-  buttonSprite: {fileID: 21300000, guid: 3869717d08e905d4880a28c6ec197aa2, type: 3}
-  description: A golf course
-  woodCost: 50
-  goldCost: 100
-  stoneCost: 2
-  model: {fileID: 919132149155446097, guid: ed26dfb5527cced478a7f310c3fdbb5b, type: 3}
+  name: 
+  buttonSprite: {fileID: 0}
+  description: 
+  woodCost: 0
+  goldCost: 0
+  stoneCost: 0
+  model: {fileID: 4620402033839688497, guid: b9dfe0304d91f1046ad19e40be3cf8ac, type: 3}
