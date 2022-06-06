@@ -9,18 +9,24 @@ namespace ResourceManagement.BuildingSystem
 
     public class TileGrid : MonoBehaviour
     {
-        public const int m_xAmount = 20;
-        public const int m_yAmount = 20;
+        [Tooltip("The number of tiles along the X Axis")]
+        [SerializeField]public const int m_GridXSize = 50;
+        [Tooltip("The number of tiles along the Y Axis")]
+        [SerializeField]public const int m_GridYSize = 50;
         private float hexHeight = 1;
         private float hexWidth = 1;
+        [Tooltip("The time a tile takes to reach its rest position")]
         public float animationLength = 0.5f;
 
+        [Tooltip("The list of tiles you want to take from")]
         public TileList TileList;
+        [Tooltip("Prefab for the tile")]
         public GameObject m_tilePrefab;
-        public AudioClip tilePlacedSound;
-        public int xEdgeErosion = 3;
-        public int yEdgeErosion = 3;
-        [Tooltip("0 - 1")][Range(0, 1)]public float erosionChance = 0.5f;
+        [Tooltip("Enables Height Variation in generation")]
+        public bool enableHeightVariation = false;
+        //public int xEdgeErosion = 3;
+        //public int yEdgeErosion = 3;
+        //[Tooltip("0 - 1")][Range(0, 1)]public float erosionChance = 0.5f;
 
         private float verticalHexOffset = 0.866f;
         private float horizontalHexOffset = 0.5f;
@@ -46,9 +52,9 @@ namespace ResourceManagement.BuildingSystem
 
         public void GenerateGridNoVisuals()
         {
-            for (int x = 0; x < m_xAmount; x++)
+            for (int x = 0; x < m_GridXSize; x++)
             {
-                for (int y = 0; y < m_yAmount; y++)
+                for (int y = 0; y < m_GridYSize; y++)
                 {
                     var seed = Random.value;
 
@@ -64,11 +70,11 @@ namespace ResourceManagement.BuildingSystem
                     //    Destroy(go);
                     //}
 
-                    if (x == 0 || x == m_xAmount - 1)
+                    if (x == 0 || x == m_GridXSize - 1)
                     {
                         go.GetComponent<Tile>().m_tileType = TileList.tileDictionary[TileTypes.Sand];
                     }
-                    else if (y == 0 || y == m_yAmount - 1)
+                    else if (y == 0 || y == m_GridYSize - 1)
                     {
                         go.GetComponent<Tile>().m_tileType = TileList.tileDictionary[TileTypes.Sand];
                     }
@@ -122,13 +128,24 @@ namespace ResourceManagement.BuildingSystem
 
         public IEnumerator AnimateCo()
         {
+            
+
             foreach (GameObject tile in m_tiles)
             {
+                var seed = Random.value;
                 if (tile != null)
                 {
                     tile.SetActive(true);
-                    tile.transform.DOMove(new Vector3(tile.transform.position.x, tile.transform.position.y - 5, tile.transform.position.z), animationLength);
-                    yield return new WaitForSeconds(0.004f);
+                    if(seed < 0.3 && tile.GetComponent<Tile>().m_tileType != TileList.tileDictionary[TileTypes.Sand] && enableHeightVariation)
+                    {
+                        tile.transform.DOMove(new Vector3(tile.transform.position.x, tile.transform.position.y - Random.Range(4.8f, 4.9f), tile.transform.position.z), animationLength);
+                    }
+                    else 
+                    {
+                        tile.transform.DOMove(new Vector3(tile.transform.position.x, tile.transform.position.y - 5, tile.transform.position.z), animationLength);
+                    }
+
+                    yield return new WaitForSeconds(0.00004f);
                 }
             }
             OnAnimationComplete.Invoke();
