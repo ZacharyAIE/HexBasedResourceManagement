@@ -21,8 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BuildPossible
-  m_Shader: {fileID: -6465566751694194690, guid: 1d961668033aa364fb74ff6ec5db6658, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: -6465566751694194690, guid: 6d008157db6e63549b23a0b9b48c28f3, type: 3}
+  m_ShaderKeywords: _GLOSSYREFLECTIONS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -126,6 +126,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
@@ -137,6 +138,7 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _TextureRimPower: 1
+    - _UVSec: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:

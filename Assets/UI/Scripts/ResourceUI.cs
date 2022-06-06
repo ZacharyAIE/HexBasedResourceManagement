@@ -24,6 +24,22 @@ namespace ResourceManagement
             resourceManager = FindObjectOfType<ResourceManager>();
             resourceType = rt;
             textBox.text = resourceManager.GetResource(resourceType).ToString();
+
+            switch (rt)
+            {
+                case ResourceManager.ResourceType.Stone:
+                    image.sprite = Resources.Load<Sprite>("Stone");
+                   break;
+                case ResourceManager.ResourceType.Wood:
+                    image.sprite = Resources.Load<Sprite>("Wood");
+                    break;
+                case ResourceManager.ResourceType.Gold:
+                    image.sprite = Resources.Load<Sprite>("Coin");
+                    break;
+                case ResourceManager.ResourceType.People:
+                    image.sprite = Resources.Load<Sprite>("People");
+                    break;
+            }
         }
 
         public void UpdateUI()

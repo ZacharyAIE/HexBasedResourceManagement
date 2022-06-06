@@ -15,6 +15,7 @@ namespace ResourceManagement.BuildingSystem
         public Material buildPossibleMaterial;
         public Material buildImpossibleMaterial;
         public Material highlightMaterial;
+        private bool placingEnabled = false; // To stop people from breaking the animations.
 
         [HideInInspector] public float rotationAngle;
         public float rotationByAmount = 90;
@@ -31,7 +32,7 @@ namespace ResourceManagement.BuildingSystem
         private void FixedUpdate()
         {
             // Check if we have a building selected from the UI
-            if (buildingToBuy)
+            if (buildingToBuy && placingEnabled)
             {
                 mousePos = Mouse.current.position.ReadValue();
                 ray = Camera.main.ScreenPointToRay(mousePos);
@@ -142,6 +143,19 @@ namespace ResourceManagement.BuildingSystem
 
             Destroy(cursorAttachedModel);
             cursorAttachedModel = null;
+        }
+
+        public void EnableBuilding()
+        {
+            placingEnabled = true;
+        }
+        public void DisableBuilding()
+        {
+            placingEnabled = false;
+        }
+        public bool BuildingEnabled()
+        {
+            return placingEnabled;
         }
 
         public void OnRotate(InputAction.CallbackContext ctx)

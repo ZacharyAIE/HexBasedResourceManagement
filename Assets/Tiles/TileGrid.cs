@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using DG.Tweening;
 
 namespace ResourceManagement.BuildingSystem
@@ -25,6 +26,7 @@ namespace ResourceManagement.BuildingSystem
         private float horizontalHexOffset = 0.5f;
 
         public List<GameObject> m_tiles = new List<GameObject>();
+        public UnityEvent OnAnimationComplete;
 
         private void Awake()
         {
@@ -129,6 +131,7 @@ namespace ResourceManagement.BuildingSystem
                     yield return new WaitForSeconds(0.004f);
                 }
             }
+            OnAnimationComplete.Invoke();
         }
 
         public void RegenGrid()

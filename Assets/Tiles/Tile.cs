@@ -19,6 +19,7 @@ namespace ResourceManagement.BuildingSystem
         public ParticleSystem m_particleSystem;
         public Transform m_underTile;
         public float m_constructAnimLength = 0.7f;
+        
 
         private void Start()
         {
@@ -49,7 +50,7 @@ namespace ResourceManagement.BuildingSystem
 
         public override void OnSelect()
         {
-            if (!m_buildingData && buildCursor.buildingToBuy)
+            if (!m_buildingData && buildCursor.buildingToBuy && buildCursor.BuildingEnabled())
             {
                 // BUILDING SUCCESFULLY PLACED!
                 if (resourceManager && CanAfford())
