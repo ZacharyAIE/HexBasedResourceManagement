@@ -10,19 +10,11 @@ namespace ResourceManagement
         [SerializeField] public int startingPeople = 2;
 
         public ResourceCounterUI resourceCounter;
-        public UnityEvent resourcesUpdated;
+        public UnityEvent<ResourceType> resourcesUpdated;
 
         void Awake()
         {
             InitResources();
-        }
-
-        public enum ResourceType
-        {
-            Wood,
-            Stone,
-            Gold,
-            People
         }
 
         public Dictionary<ResourceType, int> resources = new Dictionary<ResourceType, int>();
@@ -37,7 +29,7 @@ namespace ResourceManagement
         public void SetResource(ResourceType rt, int amount)
         {
             resources[rt] += amount;
-            resourcesUpdated.Invoke();
+            resourcesUpdated.Invoke(rt);
         }
 
         void InitResources()

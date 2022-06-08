@@ -2,16 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ResourceManagement.BuildingSystem
+namespace ResourceManagement.Tiles
 {
-    public enum TileTypes
-    {
-        Stone,
-        Sand,
-        Grass,
-        Forest
-    }
-
     [CreateAssetMenu(menuName = "Tile Type List")]
     public class TileList : ScriptableObject
     {

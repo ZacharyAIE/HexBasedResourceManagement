@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59958b3608ab2a84b98f2d94756f3525, type: 3}
   m_Name: Grass
   m_EditorClassIdentifier: 
-  name: Grass
+  tileName: Grass
   pathCost: 1
   model: {fileID: 3213815664748697170, guid: c9e641b401b35ad489aef86ed6f4ae74, type: 3}
   defaultBuilding: {fileID: 0}

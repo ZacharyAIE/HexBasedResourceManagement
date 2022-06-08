@@ -8,7 +8,7 @@ namespace ResourceManagement.Debugging
     public class ChangeResourceButton : MonoBehaviour
     {
         ResourceManager resourceManager;
-        public ResourceManager.ResourceType resourceType;
+        public ResourceType resourceType;
         public int amountToAdd;
         // Start is called before the first frame update
         void Start()

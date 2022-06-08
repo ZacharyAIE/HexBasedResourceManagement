@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df2ef050e01a9e45ad0a95fb5f1aa16, type: 3}
   m_Name: ForestBuilding
   m_EditorClassIdentifier: 
-  name: Trees
+  buildingName: 
   buttonSprite: {fileID: 0}
   description: 
-  woodCost: 0
-  goldCost: 0
-  stoneCost: 0
-  model: {fileID: 919132149155446097, guid: 5dd4d75b4337ec244aee8ae51ad53d72, type: 3}
+  costList:
+  - resourceType: 0
+    resourceAmount: 5
+  - resourceType: 1
+    resourceAmount: 10
+  model: {fileID: 3098174040253386004, guid: 7fe3b9bc8fac1454f946d6dbd348b530, type: 3}

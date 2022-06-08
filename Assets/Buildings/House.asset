@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df2ef050e01a9e45ad0a95fb5f1aa16, type: 3}
   m_Name: House
   m_EditorClassIdentifier: 
-  name: House
+  buildingName: House
   buttonSprite: {fileID: 21300000, guid: 11be05e0cb3f6d64e9799e0dac330369, type: 3}
   description: A Humble Abode
-  woodCost: 10
-  goldCost: 10
-  stoneCost: 0
-  model: {fileID: 919132149155446097, guid: 583e6f7bb0a80b8468542e249da50b05, type: 3}
+  costList:
+  - resourceType: 0
+    resourceAmount: 10
+  - resourceType: 1
+    resourceAmount: 15
+  model: {fileID: 1319497568686536510, guid: 5220c042b958d3e44a6ebc3a6448660d, type: 3}

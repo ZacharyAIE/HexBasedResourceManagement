@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using ResourceManagement.Tiles;
 
 namespace ResourceManagement.BuildingSystem
 {
@@ -85,49 +86,7 @@ namespace ResourceManagement.BuildingSystem
             // When we dont have a building to buy selected
             else if (!buildingToBuy)
             {
-                //// Find whats under mouse
-                //mousePos = Mouse.current.position.ReadValue();
-                //ray = Camera.main.ScreenPointToRay(mousePos);
-
-                //Tile hitObject;
-                //Tile prevHitObject = null;
-                //Material[] mats;
-                //Material[] oldMatsTemp = null;
-
-                //// If its a tile
-                //if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.GetComponentInParent<Tile>())
-                //{
-                //    hitObject = hit.collider.gameObject.GetComponentInParent<Tile>();
-
-                //    if (hitObject)
-                //    {
-                //        // If the tile has a building on it
-                //        if (hitObject != null && hitObject.GetBuilding())
-                //        {
-                //            mats = hitObject.GetBuilding().GetComponent<MeshRenderer>().materials;
-                //            oldMatsTemp = mats;
-                //            // Change its material to select it.
-                //            for (int i = 0; i < hitObject.GetBuilding().GetComponent<MeshRenderer>().materials.Length; i++)
-                //            {
-                //                mats[i] = highlightMaterial;
-                //                hitObject.GetBuilding().GetComponent<MeshRenderer>().materials = mats;
-                //            }
-                //            prevHitObject = hitObject;
-                //        }
-                //        if (prevHitObject != null && prevHitObject != hitObject)
-                //        {
-                //            if (hitObject.GetBuilding())
-                //            {
-                //                for (int i = 0; i < hitObject.GetBuilding().GetComponent<MeshRenderer>().materials.Length; i++)
-                //                {
-                //                    mats = oldMatsTemp;
-                //                    prevHitObject.GetBuilding().GetComponent<MeshRenderer>().materials = mats;
-                //                }
-                //            }
-                //        }
-                //    }
-                    
-                //}
+                
             }
         }
 
@@ -170,19 +129,13 @@ namespace ResourceManagement.BuildingSystem
         public void TakeResources()
         {
             DG.Tweening.DOTween.Clear();
-            if (buildingToBuy.goldCost > 0)
+
+            foreach(ResourceType rt in System.Enum.GetValues(typeof(ResourceType)))
             {
-                resourceManager.SetResource(ResourceManager.ResourceType.Gold, -buildingToBuy.goldCost);
-            }
-                
-            if (buildingToBuy.woodCost > 0)
-            {
-                resourceManager.SetResource(ResourceManager.ResourceType.Wood, -buildingToBuy.woodCost);
-            }
-                
-            if (buildingToBuy.stoneCost > 0)
-            {
-                resourceManager.SetResource(ResourceManager.ResourceType.Stone, -buildingToBuy.stoneCost);
+                if (buildingToBuy.GetCost(rt) > 0)
+                {
+                    resourceManager.SetResource(rt, -buildingToBuy.GetCost(rt));
+                }
             }
         }
     }

@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using DG.Tweening;
+using ResourceManagement.BuildingSystem;
 
-namespace ResourceManagement.BuildingSystem
+namespace ResourceManagement.Tiles
 {
     public class Tile : Clickable
     {
@@ -61,7 +62,10 @@ namespace ResourceManagement.BuildingSystem
 
                     m_currentBuilding = Instantiate(m_buildingData.model, m_underTile.position, Quaternion.Euler(0,buildCursor.rotationAngle,0));
 
+                    m_currentBuilding.transform.SetParent(m_snapPoint, true);
+
                     m_currentBuilding.transform.DOMove(m_snapPoint.position, m_constructAnimLength); // Animate the construction of the building.
+                    
 
                     var tileColour = m_tileType.model.GetComponent<MeshRenderer>().sharedMaterials[1].color;
                     m_particleSystem.GetComponent<ParticleSystemRenderer>().material.color = new Color(tileColour.r /2, tileColour.g /2, tileColour.b /2, tileColour.a);
@@ -71,6 +75,7 @@ namespace ResourceManagement.BuildingSystem
                     m_audioSource.PlayOneShot(buildingPlaceSound);
 
                     buildCursor.ClearCursor(true);
+                    
                 }
 
                 else
@@ -102,14 +107,15 @@ namespace ResourceManagement.BuildingSystem
 
         public bool CanAfford()
         {
-            if(resourceManager.GetResource(ResourceManager.ResourceType.Gold) >= buildCursor.buildingToBuy.goldCost
-                    && resourceManager.GetResource(ResourceManager.ResourceType.Wood) >= buildCursor.buildingToBuy.woodCost
-                    && resourceManager.GetResource(ResourceManager.ResourceType.Stone) >= buildCursor.buildingToBuy.stoneCost)
+            foreach (ResourceType rt in System.Enum.GetValues(typeof(ResourceType)))
             {
-                return true;
+                if (buildCursor.buildingToBuy.GetCost(rt) > resourceManager.GetResource(rt))
+                {
+                    return false;
+                }
+
             }
-            else
-                return false;
+            return true;
         }
 
         public Building GetBuildingData()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59958b3608ab2a84b98f2d94756f3525, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: 
-  name: Stone
+  tileName: Stone
   pathCost: 1
   model: {fileID: 3213815664748697170, guid: 2a5ad3628e4b4f7429956636ac864f9a, type: 3}
   defaultBuilding: {fileID: 11400000, guid: 8e761c76947d7be479ef5dcc89574008, type: 2}

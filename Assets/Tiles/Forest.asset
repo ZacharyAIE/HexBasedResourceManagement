@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59958b3608ab2a84b98f2d94756f3525, type: 3}
   m_Name: Forest
   m_EditorClassIdentifier: 
-  name: Forest
+  tileName: Forest
   pathCost: 1
-  model: {fileID: 3213815664748697170, guid: c9e641b401b35ad489aef86ed6f4ae74, type: 3}
+  model: {fileID: 3213815664748697170, guid: 01be305e9b0423c4f94198fc89234f3e, type: 3}
   defaultBuilding: {fileID: 11400000, guid: dfa69dfb5368cc94e9d9c6482d3adc39, type: 2}

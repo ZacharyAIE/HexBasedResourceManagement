@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df2ef050e01a9e45ad0a95fb5f1aa16, type: 3}
   m_Name: TownHall
   m_EditorClassIdentifier: 
-  name: Town Hall
+  buildingName: 
   buttonSprite: {fileID: 21300000, guid: fa76993a7b631b14cbaeb6403a868062, type: 3}
   description: The Town Centre
-  woodCost: 0
-  goldCost: 100
-  stoneCost: 0
-  model: {fileID: 4498698482809196035, guid: 11dc6d134f22c8c449d7ff2dc18c3410, type: 3}
+  costList:
+  - resourceType: 0
+    resourceAmount: 50
+  - resourceType: 2
+    resourceAmount: 50
+  model: {fileID: 7199514019998683854, guid: 3888a13e67effc048b03325c5ef9d65a, type: 3}

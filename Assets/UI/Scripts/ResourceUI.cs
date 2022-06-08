@@ -10,7 +10,7 @@ namespace ResourceManagement
 
     public class ResourceUI : MonoBehaviour
     {
-        public ResourceManager.ResourceType resourceType;
+        public ResourceType resourceType;
         public ResourceManager resourceManager;
         public TMP_Text textBox;
         public Image image;
@@ -19,27 +19,13 @@ namespace ResourceManagement
         public float shakeStrength = 30;
         public int shakeVibrato = 30;
 
-        public void InitUI(ResourceManager.ResourceType rt)
+        public void InitUI(ResourceType rt)
         {
             resourceManager = FindObjectOfType<ResourceManager>();
             resourceType = rt;
             textBox.text = resourceManager.GetResource(resourceType).ToString();
 
-            switch (rt)
-            {
-                case ResourceManager.ResourceType.Stone:
-                    image.sprite = Resources.Load<Sprite>("Stone");
-                   break;
-                case ResourceManager.ResourceType.Wood:
-                    image.sprite = Resources.Load<Sprite>("Wood");
-                    break;
-                case ResourceManager.ResourceType.Gold:
-                    image.sprite = Resources.Load<Sprite>("Coin");
-                    break;
-                case ResourceManager.ResourceType.People:
-                    image.sprite = Resources.Load<Sprite>("People");
-                    break;
-            }
+            image.sprite = Resources.Load<Sprite>(rt.ToString());
         }
 
         public void UpdateUI()

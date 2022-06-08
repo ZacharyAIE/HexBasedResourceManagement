@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5428288390400414091}
   - component: {fileID: 9005787561909460526}
   - component: {fileID: 6565697793500801764}
+  - component: {fileID: -5908422313240950295}
   m_Layer: 0
   m_Name: stone_mountain
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-5908422313240950295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4620402033839688497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39422a21a8c48c48b23fe88909039b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationType: 1

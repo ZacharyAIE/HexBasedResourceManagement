@@ -6231,6 +6231,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 61f23600-b3c9-48d5-aad5-11eae0e180cb
     m_ActionName: StrategyCamera/RotateItem[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ef997782-f856-448d-af9a-3c243d6f54ae
+    m_ActionName: StrategyCamera/Delete[/Keyboard/delete]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: StrategyCamera
@@ -7549,6 +7553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationLength: 0.5
+  nextTileTime: 0.00004
   TileList: {fileID: 11400000, guid: 234603a42075a1c4c92424283b8507d5, type: 2}
   m_tilePrefab: {fileID: 5320681217776136752, guid: ab3a05cca3dd80d44a2371ed92032ad3, type: 3}
   enableHeightVariation: 1
@@ -8922,6 +8927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 763202001}
   - component: {fileID: 763202002}
+  - component: {fileID: 763202003}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -8953,7 +8959,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4f2dc3d0542edb3478d8d0dba66d5a6c, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.505
   m_Pitch: 1
@@ -9039,6 +9045,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &763202003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763202000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3252981f9841edd4abf49a40a3affdaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playlist:
+  - {fileID: 8300000, guid: 4f2dc3d0542edb3478d8d0dba66d5a6c, type: 3}
+  - {fileID: 8300000, guid: 6de90343014c62045a0913eeecd99251, type: 3}
+  - {fileID: 8300000, guid: 6db243309a23c96469596ddef8b0a5b8, type: 3}
+  - {fileID: 8300000, guid: bba0100986b29854d8ce4e2d22066d24, type: 3}
+  audioSource: {fileID: 763202002}
+  probs: []
+  currentClip: {fileID: 0}
 --- !u!1001 &765744351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22697,6 +22723,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7547033517445781004, guid: ab3a05cca3dd80d44a2371ed92032ad3, type: 3}
   m_PrefabInstance: {fileID: 1639590342}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2118675690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1790971763016250457, guid: 31981e68e44d598468279f847521332c, type: 3}
+  m_PrefabInstance: {fileID: 8065109727339442623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2118675691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118675690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377878ad2bb5be9478524f44c992a222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingImage: {fileID: 0}
+  resourceManager: {fileID: 0}
+  tooltipDescription: 
 --- !u!1001 &2125665481
 PrefabInstance:
   m_ObjectHideFlags: 0

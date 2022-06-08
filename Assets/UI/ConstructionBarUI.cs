@@ -4,30 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using ResourceManagement.BuildingSystem;
 
-namespace ResourceManagement
+
+public class ConstructionBarUI : MonoBehaviour
 {
+    public BuildingList buildings;
+    public BuildButton buttonPrefab;
+    public BuildCursor buildCursor;
 
-    public class ConstructionBarUI : MonoBehaviour
+    private void Awake()
     {
-        public BuildingList buildings;
-        public BuildButton buttonPrefab;
-        public BuildCursor buildCursor;
+        buildCursor = FindObjectOfType<BuildCursor>();
+        PopulateUI();
+    }
 
-        private void Awake()
+    public void PopulateUI()
+    {
+        foreach (Building b in buildings.list)
         {
-            buildCursor = FindObjectOfType<BuildCursor>();
-            PopulateUI();
-        }
-
-        public void PopulateUI()
-        {
-            foreach (Building b in buildings.list)
+            if (b)
             {
-                if (b)
-                {
-                    var button = Instantiate(buttonPrefab, this.gameObject.transform).GetComponent<BuildButton>();
-                    button.SetBuilding(b, buildCursor);
-                }
+                var button = Instantiate(buttonPrefab, this.gameObject.transform).GetComponent<BuildButton>();
+                button.SetBuilding(b, buildCursor);
             }
         }
     }

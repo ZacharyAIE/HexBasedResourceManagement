@@ -25,13 +25,12 @@ namespace ResourceManagement
             foreach (ResourceUI ui in resourceUIElements)
             {
                 ui.UpdateUI();
-               
             }
         }
 
         public void CreateResourceUI()
         {
-            foreach (ResourceManager.ResourceType rt in System.Enum.GetValues(typeof(ResourceManager.ResourceType)))
+            foreach (ResourceType rt in System.Enum.GetValues(typeof(ResourceType)))
             {
                 ResourceUI ui = Instantiate(uiBoxPrefab, this.transform);
                 ui.gameObject.name = rt.ToString() + " Resource UI";
@@ -39,13 +38,11 @@ namespace ResourceManagement
                 ui.InitUI(rt);
             }
         }
-        ///FIX THIS STUFF!!!!!!!!!!!!!!
-        ///!!!!!!!!!!!!!!!!!!!!!!!
-        ///!!!!!!!!!!!!!
+
         public void BuildFailed()
         {
             EnableFailText();
-            if (messageBox.active != false)
+            if (messageBox.activeSelf != false)
                 Invoke("DisableFailText", 2f);
         }
 
@@ -53,14 +50,14 @@ namespace ResourceManagement
         {
             if (messageBox)
             {
-                messageBox.active = true;
+                messageBox.SetActive(true);
             }
         }
         void DisableFailText()
         {
             if (messageBox)
             {
-                messageBox.active = false;
+                messageBox.SetActive(false);
             }
         }
     }

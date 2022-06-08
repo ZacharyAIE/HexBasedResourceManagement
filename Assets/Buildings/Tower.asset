@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df2ef050e01a9e45ad0a95fb5f1aa16, type: 3}
   m_Name: Tower
   m_EditorClassIdentifier: 
-  name: Tower
+  buildingName: 
   buttonSprite: {fileID: 21300000, guid: ffd7061afcb1b214aabf9bc9d815eb22, type: 3}
   description: A Watch Tower.
-  woodCost: 20
-  goldCost: 50
-  stoneCost: 10
+  costList:
+  - resourceType: 0
+    resourceAmount: 0
   model: {fileID: 919132149155446097, guid: e620dc47af26ff4489bf806908e90e67, type: 3}

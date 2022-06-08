@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59958b3608ab2a84b98f2d94756f3525, type: 3}
   m_Name: Sand
   m_EditorClassIdentifier: 
-  name: sand
+  tileName: Sand
   pathCost: 1
   model: {fileID: 3213815664748697170, guid: 4f43ab5620bb9414fb29c1e746e63ac9, type: 3}
+  defaultBuilding: {fileID: 0}
