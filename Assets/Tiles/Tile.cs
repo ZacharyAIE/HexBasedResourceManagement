@@ -69,7 +69,7 @@ namespace ResourceManagement.Tiles
                     if(m_buildingData?.resourceToProduce != ResourceType.None)
                     {
                         m_currentBuilding.AddComponent<ProduceOnTick>();
-                        ProduceOnTick producer = GetComponent<ProduceOnTick>();
+                        ProduceOnTick producer = m_currentBuilding.GetComponent<ProduceOnTick>();
                         producer.amountToProduce = m_buildingData.amountToProduce;
                         producer.resourceToProduce = m_buildingData.resourceToProduce;
                     }

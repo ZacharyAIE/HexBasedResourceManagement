@@ -23,6 +23,7 @@ namespace ResourceManagement.BuildingSystem
         void Produce()
         {
             rm.SetResource(resourceToProduce, amountToProduce);
+            Animate();
         }
 
         void Animate()

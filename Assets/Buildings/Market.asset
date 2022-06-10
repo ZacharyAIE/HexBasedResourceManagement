@@ -17,7 +17,6 @@ MonoBehaviour:
   description: A place for dwarves to deposit their materials
   resourceToProduce: 3
   amountToProduce: 2
-  produceSound: {fileID: 0}
   costList:
   - resourceType: 1
     resourceAmount: 20

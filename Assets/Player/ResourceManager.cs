@@ -28,8 +28,12 @@ namespace ResourceManagement
 
         public void SetResource(ResourceType rt, int amount)
         {
-            resources[rt] += amount;
-            resourcesUpdated.Invoke(rt);
+            if (rt != ResourceType.None)
+            {
+                resources[rt] += amount;
+                resourcesUpdated.Invoke(rt);
+            }
+                
         }
 
         void InitResources()

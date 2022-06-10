@@ -15,7 +15,6 @@ namespace ResourceManagement.BuildingSystem
 
         public ResourceType resourceToProduce;
         public int amountToProduce;
-        public AudioClip produceSound;
 
         Dictionary<ResourceType, int> _costs;
         Dictionary<ResourceType, int> costs
