@@ -346,9 +346,9 @@ MonoBehaviour:
   resourceManager: {fileID: 0}
   textBox: {fileID: 6167918289272768792}
   image: {fileID: 8437559869911002935}
-  shakeDuration: 0.5
-  shakeStrength: 30
-  shakeVibrato: 30
+  shakeDuration: 0.2
+  shakeStrength: 2
+  shakeVibrato: 2
 --- !u!1 &6830396442321690388
 GameObject:
   m_ObjectHideFlags: 0

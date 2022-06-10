@@ -15,9 +15,11 @@ MonoBehaviour:
   buildingName: 
   buttonSprite: {fileID: 21300000, guid: fa76993a7b631b14cbaeb6403a868062, type: 3}
   description: The Town Centre
+  resourceToProduce: 0
+  amountToProduce: 0
   costList:
-  - resourceType: 0
-    resourceAmount: 50
   - resourceType: 2
+    resourceAmount: 50
+  - resourceType: 1
     resourceAmount: 50
   model: {fileID: 7199514019998683854, guid: 3888a13e67effc048b03325c5ef9d65a, type: 3}

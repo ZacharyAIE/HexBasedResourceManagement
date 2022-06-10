@@ -15,7 +15,11 @@ MonoBehaviour:
   buildingName: 
   buttonSprite: {fileID: 21300000, guid: ffd7061afcb1b214aabf9bc9d815eb22, type: 3}
   description: A Watch Tower.
+  resourceToProduce: 0
+  amountToProduce: 0
   costList:
-  - resourceType: 0
-    resourceAmount: 0
+  - resourceType: 2
+    resourceAmount: 50
+  - resourceType: 3
+    resourceAmount: 20
   model: {fileID: 919132149155446097, guid: e620dc47af26ff4489bf806908e90e67, type: 3}

@@ -35,7 +35,8 @@ namespace ResourceManagement
         void InitResources()
         {
             foreach(ResourceType rt in System.Enum.GetValues(typeof(ResourceType)))
-                resources[rt] = 200;
+                if(rt != ResourceType.None)
+                    resources[rt] = 200;
 
             resources[ResourceType.People] = startingPeople;
         }

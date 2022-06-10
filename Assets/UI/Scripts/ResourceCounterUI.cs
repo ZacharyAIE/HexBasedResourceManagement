@@ -32,10 +32,13 @@ namespace ResourceManagement
         {
             foreach (ResourceType rt in System.Enum.GetValues(typeof(ResourceType)))
             {
-                ResourceUI ui = Instantiate(uiBoxPrefab, this.transform);
-                ui.gameObject.name = rt.ToString() + " Resource UI";
-                resourceUIElements.Add(ui);
-                ui.InitUI(rt);
+                if(rt != ResourceType.None)
+                {
+                    ResourceUI ui = Instantiate(uiBoxPrefab, this.transform);
+                    ui.gameObject.name = rt.ToString() + " Resource UI";
+                    resourceUIElements.Add(ui);
+                    ui.InitUI(rt);
+                }
             }
         }
 

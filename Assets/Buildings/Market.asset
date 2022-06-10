@@ -15,9 +15,11 @@ MonoBehaviour:
   buildingName: Market
   buttonSprite: {fileID: 21300000, guid: ba6ade6252d304d46ba801aab7b557ef, type: 3}
   description: A place for dwarves to deposit their materials
+  resourceToProduce: 3
+  amountToProduce: 2
   costList:
-  - resourceType: 0
-    resourceAmount: 20
   - resourceType: 1
+    resourceAmount: 20
+  - resourceType: 2
     resourceAmount: 25
   model: {fileID: 5422895069799627244, guid: 6f90b6e3445709f4d84a01ae15ed10be, type: 3}

@@ -12,6 +12,8 @@ namespace ResourceManagement.BuildingSystem
         public string buildingName;
         public Sprite buttonSprite;
         public string description;
+        public ResourceType resourceToProduce;
+        public int amountToProduce;
 
         Dictionary<ResourceType, int> _costs;
         Dictionary<ResourceType, int> costs
@@ -41,7 +43,6 @@ namespace ResourceManagement.BuildingSystem
 
             return costs[rt];
         }
-
     }
 
     [System.Serializable]

@@ -15,9 +15,11 @@ MonoBehaviour:
   buildingName: Tavern
   buttonSprite: {fileID: 21300000, guid: 226e97f623ff2524aa4e64e8642602fa, type: 3}
   description: A place for the dwarves to drink and be merry!
+  resourceToProduce: 3
+  amountToProduce: 1
   costList:
-  - resourceType: 0
-    resourceAmount: 10
   - resourceType: 2
+    resourceAmount: 10
+  - resourceType: 3
     resourceAmount: 50
   model: {fileID: 7717428523944960077, guid: 4ac7cd3ff8da59c459dd84ce65e750b2, type: 3}

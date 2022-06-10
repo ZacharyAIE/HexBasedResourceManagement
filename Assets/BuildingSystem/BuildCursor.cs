@@ -132,10 +132,14 @@ namespace ResourceManagement.BuildingSystem
 
             foreach(ResourceType rt in System.Enum.GetValues(typeof(ResourceType)))
             {
-                if (buildingToBuy.GetCost(rt) > 0)
+                if(rt != ResourceType.None)
                 {
-                    resourceManager.SetResource(rt, -buildingToBuy.GetCost(rt));
+                    if (buildingToBuy.GetCost(rt) > 0)
+                    {
+                        resourceManager.SetResource(rt, -buildingToBuy.GetCost(rt));
+                    }
                 }
+                
             }
         }
     }
