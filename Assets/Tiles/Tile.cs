@@ -66,11 +66,13 @@ namespace ResourceManagement.Tiles
 
                     m_currentBuilding.transform.DOMove(m_snapPoint.position, m_constructAnimLength); // Animate the construction of the building.
 
-                    m_currentBuilding.AddComponent<ProduceOnTick>();
-
-                    m_currentBuilding.GetComponent<ProduceOnTick>().amountToProduce = m_buildingData.amountToProduce;
-                    m_currentBuilding.GetComponent<ProduceOnTick>().resourceToProduce = m_buildingData.resourceToProduce;
-
+                    if(m_buildingData?.resourceToProduce != ResourceType.None)
+                    {
+                        m_currentBuilding.AddComponent<ProduceOnTick>();
+                        ProduceOnTick producer = GetComponent<ProduceOnTick>();
+                        producer.amountToProduce = m_buildingData.amountToProduce;
+                        producer.resourceToProduce = m_buildingData.resourceToProduce;
+                    }
 
                     var tileColour = m_tileType.model.GetComponent<MeshRenderer>().sharedMaterials[1].color;
                     m_particleSystem.GetComponent<ParticleSystemRenderer>().material.color = new Color(tileColour.r /2, tileColour.g /2, tileColour.b /2, tileColour.a);

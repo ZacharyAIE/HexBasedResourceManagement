@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ResourceManagement;
+using DG.Tweening;
 
 namespace ResourceManagement.BuildingSystem
 {
@@ -22,6 +23,11 @@ namespace ResourceManagement.BuildingSystem
         void Produce()
         {
             rm.SetResource(resourceToProduce, amountToProduce);
+        }
+
+        void Animate()
+        {
+            gameObject.transform.DOShakeScale(.4f, 0.004f, 1,0,false);
         }
     }
 }
