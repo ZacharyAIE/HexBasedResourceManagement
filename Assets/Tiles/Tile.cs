@@ -62,15 +62,20 @@ namespace ResourceManagement.Tiles
 
                     m_currentBuilding = Instantiate(m_buildingData.model, m_underTile.position, Quaternion.Euler(0,buildCursor.rotationAngle,0));
 
+                    // Set the building parent
                     m_currentBuilding.transform.SetParent(m_snapPoint, true);
 
-                    m_currentBuilding.transform.DOMove(m_snapPoint.position, m_constructAnimLength); // Animate the construction of the building.
+                    // Animate the construction of the building.
+                    m_currentBuilding.transform.DOMove(m_snapPoint.position, m_constructAnimLength); 
 
-                    m_currentBuilding.AddComponent<ProduceOnTick>();
-
-                    m_currentBuilding.GetComponent<ProduceOnTick>().amountToProduce = m_buildingData.amountToProduce;
-                    m_currentBuilding.GetComponent<ProduceOnTick>().resourceToProduce = m_buildingData.resourceToProduce;
-
+                    if(m_buildingData?.resourceToProduce != ResourceType.None)
+                    {
+                        m_currentBuilding.AddComponent<ProduceOnTick>();
+                        ProduceOnTick producer = m_currentBuilding.GetComponent<ProduceOnTick>();
+                        producer.amountToProduce = m_buildingData.amountToProduce;
+                        producer.resourceToProduce = m_buildingData.resourceToProduce;
+                        producer.produceSound = m_buildingData.produceSound;
+                    }
 
                     var tileColour = m_tileType.model.GetComponent<MeshRenderer>().sharedMaterials[1].color;
                     m_particleSystem.GetComponent<ParticleSystemRenderer>().material.color = new Color(tileColour.r /2, tileColour.g /2, tileColour.b /2, tileColour.a);

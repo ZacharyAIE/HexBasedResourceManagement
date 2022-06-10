@@ -12,8 +12,10 @@ namespace ResourceManagement.BuildingSystem
         public string buildingName;
         public Sprite buttonSprite;
         public string description;
+
         public ResourceType resourceToProduce;
         public int amountToProduce;
+        public AudioClip produceSound;
 
         Dictionary<ResourceType, int> _costs;
         Dictionary<ResourceType, int> costs
