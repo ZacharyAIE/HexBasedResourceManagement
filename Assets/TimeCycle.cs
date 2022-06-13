@@ -16,15 +16,32 @@ public class TimeCycle : MonoBehaviour
 
     public int secondsUntilDay = 60;
     public int secondsUntilNight = 80;
+    public float daySpeed = 2;
     int currentTime = 0;
     public DayState dayState;
 
     private void Start()
     {
-        TickSystem.Instance.OnTick.AddListener(() => { CheckTime(); currentTime++; });
+        TickSystem.Instance.OnTick.AddListener(() => { /*CheckTime();*/ currentTime++; });
 
         dayState = DayState.DAY;
     }
+
+    private void Update()
+    {
+        sunlight.gameObject.transform.Rotate(new Vector3(1,0,0), Time.deltaTime * daySpeed);
+        if(sunlight.gameObject.transform.rotation.eulerAngles.x < 0 || sunlight.gameObject.transform.rotation.eulerAngles.x > 180)
+        {
+            sunlight.enabled = false;
+            dayState = DayState.NIGHT;
+        }
+        else
+        {
+            sunlight.enabled = true;
+            dayState = DayState.DAY;
+        }
+    }
+
     void CheckTime() 
     {
         if(currentTime > secondsUntilDay && dayState == DayState.NIGHT)

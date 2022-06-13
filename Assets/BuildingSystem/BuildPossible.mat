@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BuildPossible
-  m_Shader: {fileID: -6465566751694194690, guid: 1d961668033aa364fb74ff6ec5db6658, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 6d008157db6e63549b23a0b9b48c28f3, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
