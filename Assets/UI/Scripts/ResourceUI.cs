@@ -33,6 +33,8 @@ namespace ResourceManagement
             var temp = resourceManager.GetResource(resourceType).ToString();
             if (temp != textBox.text)
             {
+                transform.DORestart();
+                transform.DOKill();
                 transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato, 20, false, true);
                 textBox.text = resourceManager.GetResource(resourceType).ToString();
             }

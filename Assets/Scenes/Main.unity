@@ -143,6 +143,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &19602849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -249,6 +250,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &72004021
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +760,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &161211734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -877,7 +880,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 71.2, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196629967
@@ -1112,6 +1115,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &248339846 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d60cd6a739298bb46ade51ddfecc4696, type: 3}
@@ -1132,6 +1136,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &248883155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1233,6 +1238,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &270606135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1339,6 +1345,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &309665810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d60cd6a739298bb46ade51ddfecc4696, type: 3}
@@ -1359,6 +1366,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &314398503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1465,6 +1473,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &319201893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,6 +1628,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &326524367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,6 +1783,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &357173415 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d60cd6a739298bb46ade51ddfecc4696, type: 3}
@@ -1793,6 +1804,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &374766878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,7 +1843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 71.2, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374766880
@@ -1932,6 +1944,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &396792198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2043,6 +2056,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &418567182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2402,6 +2416,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &454868534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2435,7 +2450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 280698756035689794, guid: 5dd815939eb8ed248ba07b61add6b699, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 280698756035689794, guid: 5dd815939eb8ed248ba07b61add6b699, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3183,6 +3198,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &481327666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3803,7 +3819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 71.2, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &553337243
@@ -3904,6 +3920,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &593591341
 GameObject:
   m_ObjectHideFlags: 0
@@ -4174,7 +4191,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &606185172
 PrefabInstance:
@@ -4282,6 +4299,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &627806939
 GameObject:
   m_ObjectHideFlags: 0
@@ -4536,6 +4554,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &641529433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4728,6 +4747,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &671693939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4834,6 +4854,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &683497074
 GameObject:
   m_ObjectHideFlags: 0
@@ -5136,6 +5157,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &724330387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5809,6 +5831,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &807927447 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d60cd6a739298bb46ade51ddfecc4696, type: 3}
@@ -5829,6 +5852,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &812450247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6354,6 +6378,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &939927689
 GameObject:
   m_ObjectHideFlags: 0
@@ -6664,7 +6689,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 71.2, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &989544575
@@ -6851,6 +6876,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1034656620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6962,6 +6988,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &1057265418
 GameObject:
   m_ObjectHideFlags: 0
@@ -7384,6 +7411,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &1069517159 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d60cd6a739298bb46ade51ddfecc4696, type: 3}
@@ -7404,6 +7432,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1090000573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7630,6 +7659,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1237760160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7736,6 +7766,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &1252823678
 GameObject:
   m_ObjectHideFlags: 0
@@ -7880,6 +7911,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1258122297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8080,6 +8112,7 @@ MonoBehaviour:
   sunlight: {fileID: 1316978700}
   secondsUntilDay: 60
   secondsUntilNight: 80
+  daySpeed: 2
   dayState: 0
 --- !u!1001 &1323628651
 PrefabInstance:
@@ -8273,6 +8306,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &1360372320
 GameObject:
   m_ObjectHideFlags: 0
@@ -8367,7 +8401,7 @@ Transform:
   m_LocalScale: {x: 43.577, y: 43.577, z: 43.577}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1387746505
 GameObject:
@@ -8591,6 +8625,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!4 &1414486863 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d60cd6a739298bb46ade51ddfecc4696, type: 3}
@@ -8616,6 +8651,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1441119201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8722,6 +8758,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1445549717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9062,6 +9099,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1467134875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9448,7 +9486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 71.2, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1524284214
@@ -9624,6 +9662,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &1606789095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d60cd6a739298bb46ade51ddfecc4696, type: 3}
@@ -9644,6 +9683,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &1611856702
 GameObject:
   m_ObjectHideFlags: 0
@@ -9839,6 +9879,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1645671812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10079,6 +10120,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &1790460034
 GameObject:
   m_ObjectHideFlags: 0
@@ -10233,6 +10275,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &1793097925
 GameObject:
   m_ObjectHideFlags: 0
@@ -10387,6 +10430,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &1803073331 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d60cd6a739298bb46ade51ddfecc4696, type: 3}
@@ -10407,6 +10451,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1811421807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10513,6 +10558,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1831276506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10700,6 +10746,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1869665241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10958,7 +11005,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 71.2, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893036224
@@ -11059,6 +11106,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1908289010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11555,6 +11603,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &1977419701
 GameObject:
   m_ObjectHideFlags: 0
@@ -11795,6 +11844,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &1994415544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12030,6 +12080,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &2045226004 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d60cd6a739298bb46ade51ddfecc4696, type: 3}
@@ -12050,6 +12101,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &2049504968 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d60cd6a739298bb46ade51ddfecc4696, type: 3}
@@ -12070,6 +12122,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &2085629477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12176,6 +12229,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &2093894340
 GameObject:
   m_ObjectHideFlags: 0
@@ -12347,7 +12401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 71.2, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2096127054
@@ -12726,6 +12780,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &2125859186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12832,6 +12887,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1 &2135613351 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d60cd6a739298bb46ade51ddfecc4696, type: 3}
@@ -12852,6 +12908,7 @@ MonoBehaviour:
   resetCollider: {fileID: 0}
   speed: 0.5
   xLimit: 60
+  expandDuration: 1
 --- !u!1001 &907081465034593176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12861,7 +12918,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 907081463611586080, guid: 5006fd3c27b7f1d4fb90e8f9bde05c75, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 907081463611586080, guid: 5006fd3c27b7f1d4fb90e8f9bde05c75, type: 3}
       propertyPath: m_LocalPosition.x

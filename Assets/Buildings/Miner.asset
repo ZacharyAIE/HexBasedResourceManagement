@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df2ef050e01a9e45ad0a95fb5f1aa16, type: 3}
+  m_Name: Miner
+  m_EditorClassIdentifier: 
+  buildingName: Miner
+  buttonSprite: {fileID: 21300000, guid: 838dd7ae7ff4cfc44a3380cce8efd797, type: 3}
+  description: Mines stone
+  resourceToProduce: 2
+  amountToProduce: 1
+  costList:
+  - resourceType: 1
+    resourceAmount: 10
+  - resourceType: 4
+    resourceAmount: 2
+  model: {fileID: 4195996439430342343, guid: e4ed8f460febc1540bd6e97097c8d616, type: 3}
