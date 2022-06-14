@@ -9,34 +9,61 @@ public class CloudsMove : MonoBehaviour
     public float speed;
     public float xLimit;
     float rand;
-
-
+    Vector3 temp;
+    //Is the cloud changing size?
+    bool isChangingSize = false;
+    //How long the cloud expands over
+    public float expandDuration = 1;
 
     private void Start()
     {
         rand = Random.Range(.2f, 1.2f);
+        temp = transform.localScale;
     }
 
     void Update()
     {
-        
-        transform.position += new Vector3(1,0,0)*Time.deltaTime*rand;
+        transform.position += new Vector3(1, 0, 0) * Time.deltaTime * rand;
 
-        if(transform.position.x > xLimit)
+        if (transform.position.x > xLimit)
         {
-            Vector3 temp = transform.localScale;
-            transform.localScale = Vector3.zero;
-
-            transform.position = new Vector3(-10, transform.position.y, transform.position.z);
-            transform.localScale = Vector3.Lerp(transform.localScale, temp, 1);
+            StartCoroutine(Expand());
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    IEnumerator Expand()
     {
-        if(collision.collider == resetCollider)
+        //Don't run if cloud is changing size
+        if (isChangingSize)
+            yield break;
+
+        //Mark cloud as changing size
+        isChangingSize = true;
+        //How much time has elapsed
+        float elapsedTime = 0;
+
+        //Lerp the size from 0 to original size
+        while (elapsedTime < expandDuration)
         {
-            
+            elapsedTime += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(temp, Vector3.zero, elapsedTime / expandDuration);
+            yield return null;
         }
+
+        transform.position = new Vector3(-10, transform.position.y, transform.position.z);
+
+        elapsedTime = 0;
+
+        //Lerp the size from 0 to original size
+        while (elapsedTime < expandDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(Vector3.zero, temp, elapsedTime / expandDuration);
+            yield return null;
+        }
+
+        //Mark cloud as not changing size
+        isChangingSize = false;
+        yield break;
     }
 }
