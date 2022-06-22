@@ -9,8 +9,8 @@ namespace ResourceManagement
     {
         [SerializeField] public int startingPeople = 2;
 
-        public ResourceCounterUI resourceCounter;
         public UnityEvent<ResourceType> resourcesUpdated;
+        public UnityEvent OnBuildFailed;
 
         void Awake()
         {

@@ -15,7 +15,7 @@ namespace ResourceManagement.Debugging
         {
             resourceManager = FindObjectOfType<ResourceManager>();
             GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { resourceManager.SetResource(resourceType, amountToAdd); });
-            resourceManager.resourceCounter.UpdateUI();
+            //resourceManager.resourceCounter.UpdateUI();
         }
     }
 }

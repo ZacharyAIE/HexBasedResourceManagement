@@ -87,7 +87,7 @@ namespace ResourceManagement.Tiles
 
                 else
                 {
-                    resourceManager.resourceCounter.BuildFailed();
+                    resourceManager.OnBuildFailed.Invoke();
                 }
             }
             if (m_buildingData && !buildCursor.buildingToBuy)

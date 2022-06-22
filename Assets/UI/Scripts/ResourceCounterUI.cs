@@ -17,6 +17,8 @@ namespace ResourceManagement
         private void Start()
         {
             CreateResourceUI();
+            m_resourceManager.OnBuildFailed.AddListener(BuildFailed);
+
         }
 
         [ContextMenu("Update")]

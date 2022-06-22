@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BuildPossible
-  m_Shader: {fileID: -6465566751694194690, guid: 6d008157db6e63549b23a0b9b48c28f3, type: 3}
+  m_Name: Highlight
+  m_Shader: {fileID: -6465566751694194690, guid: 1d961668033aa364fb74ff6ec5db6658, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -146,7 +146,6 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
@@ -158,14 +157,13 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _TextureRimPower: 1
-    - _UVSec: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - Color_0de2f468936943428075b99b6cb7a154: {r: 0, g: 0.9910371, b: 1, a: 0}
     - Color_1b69d100ba31460c9f4cb39a7fea8a58: {r: 0, g: 0, b: 0, a: 0}
     - Color_2ef7a237bbfb403aa8317c8ba5da16fe: {r: 1, g: 1, b: 1, a: 0}
-    - Color_856d146604634e42a5ea1f1fe6bd34c1: {r: 0, g: 0.5019608, b: 0.039215688, a: 1}
+    - Color_856d146604634e42a5ea1f1fe6bd34c1: {r: 0.13333333, g: 0.51716316, b: 0.8509804, a: 0}
     - Vector2_6294840a1b264dad9f0ae94e37694e59: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_a8d9f6c43b0041de94c7fd89f03ec27f: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_d528f18c6c66417890f7882e1244a174: {r: 0, g: 0, b: 0, a: 0}
@@ -175,7 +173,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NormalMapTiling: {r: 1, g: 1, b: 0, a: 0}
-    - _RimColour: {r: 0, g: 0.5, b: 0.04117644, a: 1}
+    - _RimColour: {r: 0.13333333, g: 0.475195, b: 0.8509804, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
