@@ -20,15 +20,20 @@ namespace ResourceManagement.Tiles
         public ParticleSystem m_particleSystem;
         public Transform m_underTile;
         public float m_constructAnimLength = 0.7f;
+        public UnityEvent OnBuildingPlaced;
+        public GameObject dwarfPrefab;
+        AllDance dancer;
         
 
         private void Start()
         {
+            dancer = FindObjectOfType<AllDance>();
             buildCursor = FindObjectOfType<BuildCursor>();
             resourceManager = FindObjectOfType<ResourceManager>();
             m_audioSource = GetComponent<AudioSource>();
             m_particleSystem = GetComponentInChildren<ParticleSystem>();
             Instantiate(m_tileType.model, transform, false);
+            OnBuildingPlaced.AddListener(() => { dancer.React(); });
 
             if (m_tileType.defaultBuilding)
             {
@@ -82,7 +87,18 @@ namespace ResourceManagement.Tiles
                     m_audioSource.PlayOneShot(buildingPlaceSound);
 
                     buildCursor.ClearCursor(true);
-                    
+
+                    var d = Instantiate(dwarfPrefab, m_currentBuilding.transform, true).GetComponentInChildren<Animator>();
+
+                    dancer.animators.Add(d);
+
+                    d.transform.localPosition = m_currentBuilding.transform.localPosition + new Vector3(0,0.5f,8);
+                    d.transform.rotation = m_currentBuilding.transform.rotation;
+
+                    d.transform.SetParent(null, true);
+                    d.transform.position += new Vector3(0, 0.7f, 0);
+
+                    OnBuildingPlaced.Invoke();
                 }
 
                 else

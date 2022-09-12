@@ -4913,11 +4913,14 @@ MonoBehaviour:
   m_snapPoint: {fileID: 5575596216440430457}
   resourceManager: {fileID: 0}
   m_tileType: {fileID: 11400000, guid: 729fb4a425477b346b93b280f2e78fe2, type: 2}
-  m_building: {fileID: 0}
   buildingPlaceSound: {fileID: 8300000, guid: 86bbb0c215dadb545b5622b5f878fa1c, type: 3}
   m_particleSystem: {fileID: 0}
   m_underTile: {fileID: 3403918231877999703}
   m_constructAnimLength: 0.7
+  OnBuildingPlaced:
+    m_PersistentCalls:
+      m_Calls: []
+  dwarfPrefab: {fileID: 3762420248311957644, guid: 0d09e0d6a1c9d2e4fac0cb4d3131e9bc, type: 3}
 --- !u!82 &666794185994397504
 AudioSource:
   m_ObjectHideFlags: 0
