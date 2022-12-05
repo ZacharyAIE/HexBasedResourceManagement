@@ -85,13 +85,13 @@ namespace Assets.Camera.Scripts
         {
             if (ctx.performed)
             {
-                if (ctx.ReadValue<Vector2>().y > 0 && targetZoom.y > 2)
+                if (ctx.ReadValue<Vector2>().y > 0 && targetZoom.y > 30)
                     targetZoom += zoomSpeed;
                 if (ctx.ReadValue<Vector2>().y < 0 && targetZoom.y < 70)
                     targetZoom -= zoomSpeed;
 
                 //Vector3.ClampMagnitude(targetZoom, 76);
-                Mathf.Clamp(targetZoom.y, 1, 76);
+                Mathf.Clamp(targetZoom.y, 30, 76);
 
             }
         }
